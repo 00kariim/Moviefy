@@ -1,0 +1,55 @@
+.add-movie-container {
+    max-width: 600px;
+    margin: 2.5rem auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-movie-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .add-movie-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .add-movie-input,
+  .add-movie-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .add-movie-input:focus,
+  .add-movie-textarea:focus {
+    outline: none;
+    border-color:  #7E1616;
+    box-shadow: #DC2026;
+  }
+  
+  .add-movie-button {
+    background-color: #7e1616 !important;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .add-movie-button:hover {
+    background-color: #DC2026;
+  }
+  
