@@ -46,11 +46,12 @@ const MovieDetails = () => {
         </div>
       </div>
       <div>
-      <iframe
-        src={`https://vidsrc.icu/embed/movie/${id}`}
-        className="movie_details_player"
-        allowFullScreen
-      ></iframe>
+        <h2> PLEASE USE AN ADDBLOCKER TO WATCH ADD FREE !!!</h2>
+        <iframe
+          src={`https://vidsrc.icu/embed/movie/${id}`}
+          className="movie_details_player"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
   );
