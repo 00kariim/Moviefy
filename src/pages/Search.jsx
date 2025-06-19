@@ -26,7 +26,7 @@ const Search = () => {
 
   return (
     <div className="search-page">
-      <h2>Recherche de films</h2>
+      <h2>Search for a movie</h2>
       <form onSubmit={handleSearch}>
         <input
           type="text"
@@ -38,7 +38,7 @@ const Search = () => {
       </form>
 
       {hasSearched && results.length === 0 && (
-        <p className="no-results">Aucun film trouvé.</p>
+        <p className="no-results">There is no film matching your search :/</p>
       )}
 
       <div className="movie_cards">
