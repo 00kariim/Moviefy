@@ -7,6 +7,7 @@ const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [message, setMessage] = useState(null);
@@ -22,6 +23,12 @@ const Auth = () => {
     setLoading(true);
     setError(null);
     setMessage(null);
+
+    if (!isLogin && password !== confirmPassword) {
+      setError("Passwords do not match");
+      setLoading(false);
+      return;
+    }
 
     try {
       if (isLogin) {
@@ -65,34 +72,48 @@ const Auth = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full" style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch' }}>
+          <div className="text-left">
             <label className="block text-sm font-medium text-gray-300 mb-1">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 bg-black/30 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-red-500 transition-all"
+              className="w-full px-4 py-3 bg-black/40 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-red-500 transition-all box-border"
               placeholder="you@example.com"
               required
             />
           </div>
-          <div>
+          <div className="text-left">
             <label className="block text-sm font-medium text-gray-300 mb-1">Password</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 bg-black/30 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-red-500 transition-all"
+              className="w-full px-4 py-3 bg-black/40 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-red-500 transition-all box-border"
               placeholder="••••••••"
               required
             />
           </div>
+
+          {!isLogin && (
+            <div className="text-left">
+              <label className="block text-sm font-medium text-gray-300 mb-1">Confirm Password</label>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="w-full px-4 py-3 bg-black/40 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-red-500 transition-all box-border"
+                placeholder="••••••••"
+                required={!isLogin}
+              />
+            </div>
+          )}
           
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-2 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-red-500/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-red-500/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed border-none cursor-pointer"
           >
             {loading ? 'Processing...' : isLogin ? 'Sign In' : 'Sign Up'}
           </button>

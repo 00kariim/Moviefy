@@ -22,9 +22,9 @@ const Navbar = () => {
         <li><NavLink to="/add">Add Movie</NavLink></li>
         <li><NavLink to="/search">Search</NavLink></li>
         {user ? (
-          <li><button onClick={handleLogout} className="cursor-pointer font-bold text-red-500 hover:text-red-400">Logout</button></li>
+          <li><button onClick={handleLogout} className="cursor-pointer font-bold bg-red-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-700 transition-all border-none outline-none">Logout</button></li>
         ) : (
-          <li><NavLink to="/auth" className="font-bold text-red-500 hover:text-red-400">Login</NavLink></li>
+          <li><NavLink to="/auth" className="font-bold bg-red-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-700 transition-all inline-block no-underline">Sign In / Sign Up</NavLink></li>
         )}
       </ul>
     </div>
