@@ -48,9 +48,10 @@ const MovieDetails = () => {
       <div>
         <h2> PLEASE USE AN ADDBLOCKER TO WATCH ADD FREE !!!</h2>
         <iframe
-          src={`https://vidsrc.icu/embed/movie/${id}`}
+          src={`https://vsembed.ru/embed/movie/${id}`}
           className="movie_details_player"
           allowFullScreen
+          sandbox="allow-scripts allow-same-origin allow-presentation"
         ></iframe>
       </div>
     </div>
